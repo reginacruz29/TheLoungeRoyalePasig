@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lounge Royale- Contact</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"></a>
+                <span class="logo-text">The Lounge Royale</span>
+    
+                <!-- Hamburger Icon -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    
+                <!-- Navigation Links -->
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay"></div>
+    </header>
+
+    <section class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/zHZvSQD2/472506806-623172120273302-4931881094018057660-n.jpg'); background-size: cover"> 
+        <h1>Contact Us</h1>
+        <p>Book Your Appointment Today</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <div class="info-item">
+                        <h3>Address</h3>
+                        <p>20A Sandoval Avenue, Pasig City</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Phone</h3>
+                        <p>09762143033</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Facebook</h3>
+                        <p>The Lounge Royale - Sandoval Pasig</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Hours</h3>
+                        <p>Monday - Sunday: 11:00 AM - 8:00 PM
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2>Book an Appointment</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Your Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="">Select Service</option>
+                                <option value="nail">Nail Services</option>
+                                <option value="foot">Foot Services</option>
+                                <option value="eyelash">Eyelash Services</option>
+                                <option value="waxing">Waxing Services</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="time" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Additional Notes"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="index.html" class="footer-logo">The Lounge Royale</a>
+            <div class="social-links">
+                <a href="https://www.facebook.com/TheLoungeRoyalePasig" target="_blank">Facebook</a>
+            </div>
+            <p class="copyright">© 2025 The Lounge Royale. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Add hamburger menu script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.overlay');
+    
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            });
+    
+            // Close menu when clicking a link or the overlay
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+    
+            overlay.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+    
+</body>
+</html> 

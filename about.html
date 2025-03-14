@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lounge Royale- About Us</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"></a>
+                <span class="logo-text">The Lounge Royale</span>
+    
+                <!-- Hamburger Icon -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    
+                <!-- Navigation Links -->
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay"></div>
+    </header>
+    
+    <section class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/zHZvSQD2/472506806-623172120273302-4931881094018057660-n.jpg'); background-size: cover"> 
+        <h1>About Us</h1>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Welcome!</h2>
+                <p>Welcome to The Lounge Royale, your ultimate destination for elegance and self-care. Designed for those who appreciate beauty and relaxation, 
+                    our salon offers a royal pampering experience in a lounge-like atmosphere where you can unwind, refresh, and feel your best.</p>
+                
+                <h2>Our Mission</h2>
+                <p>At The Lounge Royale, we bring luxury and relaxation together. Our mission is to provide top-tier nail, lash, and waxing services in a lounge-inspired setting, 
+                    where every client feels pampered, confident, and royale</p>
+                
+                <h2>Why choose the Lounge Royale?</h2>
+                <p><Strong>Lounge-Inspired Luxury</Strong> – Enjoy a chic and cozy ambiance designed for pure relaxation.</p>
+                <p><Strong>Expert Beauty Services </Strong> – From classic manicures to intricate nail art, lash extensions, and gentle waxing, we bring out your best look.</p>
+                <p><Strong>High-Quality Products </Strong> – We use premium, skin-friendly products to ensure a safe and lasting beauty experience.</p>    
+                <p><Strong>Pampering with a Purpose</Strong> – More than just beauty, we provide a space where you can de-stress and rejuvenate.</p>
+                
+                <h2>Where are we located?</h2>
+                <p>We are located at 20A Sandoval Ave (Beside House of Dimsum)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="index.html" class="footer-logo">The Lounge Royale</a>
+            <div class="social-links">
+                <a href="https://www.facebook.com/TheLoungeRoyalePasig" target="_blank">Facebook</a>
+            </div>
+            <p class="copyright">© 2025 The Lounge Royale. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Add hamburger menu script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.overlay');
+    
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            });
+    
+            // Close menu when clicking a link or the overlay
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+    
+            overlay.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html> 

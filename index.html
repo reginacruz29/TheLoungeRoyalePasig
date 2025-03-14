@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lounge Royale - Home</title>
+    <!-- Ensure CSS is properly linked with correct path -->
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"></a>
+                <span class="logo-text">The Lounge Royale</span>
+    
+                <!-- Hamburger Icon -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    
+                <!-- Navigation Links -->
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay"></div>
+    </header>
+    <section class="hero" id="home">
+        <h1>WELCOME TO THE LOUNGE ROYALE</h1>
+        <p>Experience luxury beauty treatments in a relaxing atmosphere</p>
+        <a href="contact.html" class="btn">BOOK NOW</a>
+    </section>
+
+    <section class="features" id="services">
+        <div class="container">
+            <h2 class="section-title">Featured Services</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>✦</span>
+                    </div>
+                    <h3>Eyelashes Extension</h3>
+                    <p>Enhance your eyes with lightweight, voluminous lashes tailored to your perfect length and style.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>✦</span>
+                    </div>
+                    <h3>Waxing Services</h3>
+                    <p> Enjoy smooth, silky skin with our gentle and effective
+                         waxing treatments for a confident, radiant glow.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>✦</span>
+                    </div>
+                    <h3>Nail Care</h3>
+                    <p> From classic manicures to gel manicures we custom premium nail art of your choice, we provide flawless, 
+                        long-lasting nails that elevate your style.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="index.html" class="footer-logo">The Lounge Royale</a>
+            <div class="social-links">
+                <a href="https://www.facebook.com/TheLoungeRoyalePasig" target="_blank">Facebook</a>
+
+            </div>
+            <p class="copyright">© 2025 The Lounge Royale. All rights reserved.</p> 
+        </div>
+    </footer>
+
+    <!-- Script to check if CSS loaded properly -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.overlay');
+    
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            });
+    
+            // Close menu when clicking a link or the overlay
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+    
+            overlay.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>    
+
+</body>
+</html>
